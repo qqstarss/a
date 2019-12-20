@@ -14,7 +14,7 @@
           <div class="h-a-info"><p>北京华迪轩榕环境科技有限公司是一家符合国家环保政策，将传统环保行业管理实施“物联网+”技术结合起来的环保科技型企业。</p>
 <p>华迪轩榕在环境污染治理行业深耕多年，伴随着“互联网+”科技浪潮，以大气污染防治监管信息化平台做为新业务切入点，在监督、管理、治理、服务等环节下功夫，做到预防为主，防治结合，解决城市环境治理监管难、执法难、工作量大等问题，为城市决策、行政执法提供了强效有力的数据支撑……</p></div>
           <div class="h-a-w">
-            <div class="h-btn f-r"><router-link to="/about">查看详情</router-link></div>
+            <div class="h-btn f-r"><router-link to="/about/abouts#a">查看详情</router-link></div>
           </div>
         </div>
       </div>
@@ -316,6 +316,11 @@ export default {
 }
 .h-btn:hover{
   background:rgba(15,99,199,.7);
+}
+.h-btn a {
+  display: inline-block;
+  width:140px;
+  height:40px;
 }
 .h-b{
   overflow: hidden;

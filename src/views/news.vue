@@ -3,8 +3,8 @@
         <commBanner productBanner="news"/>
         <div class="com-cont">
             <div class="ls-l">
-                <div class="l-men-a l-men-com">公司动态</div>
-                <div class="l-men-b l-men-com">行业新闻</div>
+                <div :class="['l-men-com',ma=='a'?'l-men-a':'l-men-b']" @click="setM('a')">公司动态</div>
+                <div :class="['l-men-com',ma=='b'?'l-men-a':'l-men-b']" @click="setM('b')">行业新闻</div>
             </div>
             <div class="ls-r" id="rightMain">
                 <commNav :nav="nav"/>
@@ -110,21 +110,23 @@
         },
         data(){
             return {
-                act:"#a",
+                ma:"a",
                 nav:{
                     a:"新闻中心",
                     b:"公司动态"
-                }
+                },
+                wRouter:null
             }
         },
         mounted(){
             this.$nextTick(function(){
-                document.querySelector("#proWrap").addEventListener('scroll', this.onScroll);
+                // this.wRouter = this.$route.query.name;
             })
         },
         methods:{
-            onScroll:function(){
-
+            setM:function(s){
+                this.ma=s;
+                if(s=='a') {this.nav.b="公司新闻"} else {this.nav.b="行业新闻"}
             }
         }
     }

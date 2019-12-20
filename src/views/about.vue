@@ -3,135 +3,24 @@
         <commBanner productBanner="about"/>
         <div class="com-cont">
             <div :class="['ls-l', mFd ? 'lm-fx' :'']">
-                <div class="l-men-a l-men-com">关于我们</div>
-                <ul class="ls-ul">
-                    <li :class="active == 'a'? 'mActive' :''">公司介绍</li>
-                    <li :class="active == 'b'? 'mActive' :''">使命</li>
-                    <li :class="active == 'c'? 'mActive' :''">愿景</li> 
-                    <li :class="active == 'd'? 'mActive' :''">理念</li>
-                    <li :class="active == 'e'? 'mActive' :''">价值观</li>
-                    <li :class="active == 'f'? 'mActive' :''">团队介绍</li>
-                    <li :class="active == 'g'? 'mActive' :''">组织架构</li>
-                    <li :class="active == 'h'? 'mActive' :''">资质荣誉</li>
+                <div :class="['l-men-com',mNb == 0 ?'l-men-a' :'l-men-b']" @click="setSlidDo(0)"><router-link to="/about/abouts">关于我们</router-link></div>
+                <ul v-if="mNb == 0" class="ls-ul">
+                    <li :class="active == 'a'? 'mActive' :''"><a href="#a">公司介绍</a></li>
+                    <li :class="active == 'b'? 'mActive' :''"><a href="#b">使命</a></li>
+                    <li :class="active == 'c'? 'mActive' :''"><a href="#c">愿景</a></li> 
+                    <li :class="active == 'd'? 'mActive' :''"><a href="#d">理念</a></li>
+                    <li :class="active == 'e'? 'mActive' :''"><a href="#e">宗旨</a></li>
+                    <li :class="active == 'f'? 'mActive' :''"><a href="#f">价值观</a></li>
+                    <li :class="active == 'g'? 'mActive' :''"><a href="#g">团队介绍</a></li>
+                    <li :class="active == 'h'? 'mActive' :''"><a href="#h">组织架构</a></li>
+                    <li :class="active == 'i'? 'mActive' :''"><a href="#i">资质荣誉</a></li>
                 </ul>
-                <div class="l-men-b l-men-com">联系我们</div>
-                <div class="l-men-b l-men-com">诚聘英才</div>
+                <div :class="['l-men-com',mNb == 1 ?'l-men-a' :'l-men-b']" @click="setSlidDo(1)"><router-link to="/about/contactUs">联系我们</router-link></div>
+                <div :class="['l-men-com',mNb == 2 ?'l-men-a' :'l-men-b']" @click="setSlidDo(2)"><router-link to="/about/advertise">诚聘英才</router-link></div>
                 <!-- <div class="l-men-b l-men-com ls-l-last">成功案例</div> -->
             </div>
             <div class="ls-r" id="rightMain">
-                <!-- 公司介绍 -->
-                <div class="ls-con-a">
-                    <div class="tit">公司介绍</div>
-                    <div class="ss">
-                        <div class="ss-ch-0">
-                            <p>北京华迪轩榕环境科技有限公司是一家符合国家环保政策，将传统环保行业管理实施“物联网+”技术结合起来的环保科技型企业。</p>
-<p>华迪轩榕在环境污染治理行业深耕多年，伴随着“互联网+”科技浪潮，以大气污染防治监管信息化平台做为新业务切入点，在监督、管理、治理、服务等环节下功夫，做到预防为主，防治结合，解决城市环环境治理领域不断的耕耘，华迪轩榕坚持在水、土壤、固废等污染防治方面建立360度治理监管方案，从初期城市环保需求分解到智慧平台研发交付培训、后期运行维护等，均建立了成熟的管理体系，做到环境监管技术服务精准卓越，切实有效降低大气污染，提升城市来，来之即战，战之必胜的专业技能过硬的智慧环保先锋团。</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- 公司使命 -->
-                <div class="ls-con-a">
-                    <div class="tit">使命</div>
-                    <div class="ss">
-                        <div class="ss-ch-0">以科技开创环境治理“智慧”新模式，以建设绿色生态环境、实现中华民族伟大复兴的“中国梦”为己任，还我们一片蓝天白云。</div>
-                    </div>
-                </div>
-                <!-- 我的愿景 -->
-                <div class="ls-con-a">
-                    <div class="tit">愿景</div>
-                    <div class="ss">
-                        <div class="ss-ch-a">
-                            创大气污染防治监督行业信息化行业平台。<br/>
-                            建大气污染防治监督责任企业。<br/>
-                            做智慧环保领域技术创新型标杆企业。<br/>
-                        </div>
-                    </div>
-                </div>
-                <!-- 我司理念 -->
-                <div class="ls-con-b">
-                    <div class="tit">理念</div>
-                    <div class="ss">
-                        <div class="ss-ch-a">
-                            通过技术理念的不断创新，创立大气污染治理行业新模式，为中国大气污染治理事业的发展竭诚奉献。
-                        </div>
-                    </div>
-                </div>
-                <!-- 企业宗旨 -->
-                <div class="ls-con-b">
-                    <div class="tit">企业宗旨</div>
-                    <div class="ss sh-24">
-                        创建智慧环保卓越团队，为城市环境治理提供专业的环保技术咨询、整体解决方案、在线数据监测、环境数据分析和设备运行维护等全方位、精细化城市智慧管家服务，担当城市智慧环保管家角色。
-                    </div>
-                </div>
-                <!-- 价值观 -->
-                <div class="ls-con-b">
-                    <div class="tit">价值观</div>
-                    <div class="ss">
-                        <div class="ss-ch-a">创立大气污染监督管理信息化平台，刷新大气源头治理服务理念。<br/>
-                        新思想、新理念、新技术，新方法，赋予大气污染治理新活力。<br/>
-                        “环”环阻击，杜绝源头污染。<br/>
-                        保卫蓝天，迎“蓝”而上。</div>
-                    </div>
-                </div>
-                <!-- 团队介绍 -->
-                <div class="ls-con-b">
-                    <div class="tit">团队介绍</div>
-                    <div class="ss">
-                        <div class="ss-ch-b"><img src="@/assets/img/b_img_02.png" /></div>
-                        <div class="ss-ch-a mt-10">华迪轩榕团队是以环保研发、集成、运维、应用等八大模块为中心，聚集了环保治理软硬件开发、产品引荐、设备设计、技术培训、设备运行维护等全方位人才，团队精英每位员工都怀揣保护生态环境的责任使命,自愿加入华迪轩榕。经过长期反复的技术研讨和实操磨练，华迪轩榕三大团队练就成一支召之即来，来之即战，战之必胜的专业技能过硬的智慧环保先锋团。</div>
-                    </div>
-                </div>
-                <!-- 组织架构 -->
-                <div class="ls-con-b">
-                    <div class="tit">组织架构</div>
-                    <div class="ss">
-                        <div class="ss-ch-b"><img src="@/assets/img/b_img_03.png" /></div>
-                    </div>
-                </div>
-                <!-- 资质荣誉 -->
-                <div class="ls-con-b">
-                    <div class="tit">我们的荣誉</div>
-                    <div class="ss">
-                        <div class="ss-ch-b"><img src="@/assets/img/z01.png" /></div>
-                        <div class="ss-ch-b"><img src="@/assets/img/z08.png" /></div>
-                        <div class="ss-ch-b"><img src="@/assets/img/z02.png" /></div>
-                        <div class="ss-ch-b"><img src="@/assets/img/z03.png" /></div>
-                        <div class="ss-ch-b"><img src="@/assets/img/z07.png" /></div>
-                        <div class="ss-ch-b"><img src="@/assets/img/z04.png" /></div>
-                        <div class="ss-ch-b"><img src="@/assets/img/z05.png" /></div>
-                    </div>
-                </div>
-                <!-- 联系我们 -->
-                <div class="ls-con-b">
-                    <div class="tit">联系我们</div>
-                    <div class="ss sh-pd-24">
-                        联系热线：010-88712369<br/>
-                        公司地址：北京市石景山区实兴东街11号2层2498室<br/>
-                        联系邮箱：huandixuanrong@163.com
-                    </div>
-                </div>
-                <!-- 诚聘英才 -->
-                <div class="ls-con-b">
-                    <div class="tit">诚聘英才</div>
-                    <div class="ss sh-pd-24">
-                        <div class="ss-tit">运维工程师</div>
-                        <div class="ss-in-a">
-                            <strong>职位描述:</strong><br/>
-                            1、负责大规模分布式系统及在线服务可靠、稳定、高效运行；<br/>
-                            2、制定和优化运维解决方案，包括但不限于柔性容灾、智能调度、弹性扩容与防攻击；<br/>
-                            3、设计及开发包括网站加速、持续交付、容量管理、弹性计算、故障分析、流量分配、性能调优等系统；<br/>
-                            4、关注业界前沿接入技术动态，负责超大规模流量接入系统的优化，演进和新接入技术探索和应用；<br/>
-                            5、参与在线系统和各类产品架构设计及自动化系统的实现，满足严格的质量与效率要求。<br/>
-                            <strong>任职要求:</strong><br/>
-                            1、本科及以上学历，5年以上运维开发或应用运维经验；<br/>
-                            2、熟悉RedHatCentOSFedora操作系统原理，TCPIP以及常用的网络协议；<br/>
-                            3、熟悉shell,python,php,java至少一种开发语言，有相关开发经验；<br/>
-                            4、熟悉MySQL,Redis,Memcache等系统的操作和维护(或者擅长其中一项)；<br/>
-                            5、或者有日志处理及分析相关经验，熟悉相关的组件，如：kafka，elk，flume，hive，storm，HDFS等；<br/>
-                            6、熟悉自动化运维管理工具（puppet/saltstack/ansible）。
-                        </div>
-                    </div>
-                </div>
+                <router-view></router-view>
             </div>
         </div>
         <commFooder />
@@ -140,6 +29,7 @@
 <script>
     import commBanner from '@/components/banner.vue'
     import commFooder from '@/components/footer.vue'
+    import smScroll from 'smooth-scroll';
     export default {
         name: 'product',
         components: {
@@ -148,32 +38,66 @@
         },
         data(){
             return {
-                active:'',
-                mFd:false
+                active:'a',
+                mFd:false,
+                mNb:0,
+                scroll:null
             }
         },
         mounted(){
             this.$nextTick(function(){
                 window.addEventListener('scroll', this.onScroll);
+                this.onScroll();
+                this.scroll = new smScroll('a[href*="#"]',{
+                    speed:800,
+                    speedAsDuration: true
+                });
+                let getSele = window.location.hash;
+                if(getSele){
+                   let anchor = document.querySelector(getSele).offsetTop + 400;
+                   this.scroll.animateScroll(anchor);
+                }
+                
             })
         },
         methods:{
             onScroll:function(){
-                
                 let sTp = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+                // 定位左侧菜单
+                if(sTp > 400){this.mFd = true;}else if(sTp < 400){this.mFd = false;}
 
-                if(sTp > 400){
-                    this.mFd = true;
+                // 定位左侧菜单子项高亮
+                let cStp = sTp - 400;
+                if(cStp >= document.querySelector("#a").offsetTop){ // 公司介绍
+                  this.active = 'a';
                 }
-                if (sTp < 400) {
-                    this.mFd = false;
+                if(cStp >= document.querySelector("#b").offsetTop){ // 使命
+                  this.active = 'b';
                 }
-               
-                
+                if(cStp >= document.querySelector("#c").offsetTop){ // 愿景
+                  this.active = 'c';
+                }
+                if(cStp >= document.querySelector("#d").offsetTop){ // 理念
+                  this.active = 'd';
+                }
+                if(cStp >= document.querySelector("#e").offsetTop){ // 宗旨
+                  this.active = 'e';
+                }
+                if(cStp >= document.querySelector("#f").offsetTop){ // 价值观
+                  this.active = 'f';
+                }
+                if(cStp >= document.querySelector("#g").offsetTop){ // 团队介绍
+                  this.active = 'g';
+                }
+                if(cStp >= document.querySelector("#h").offsetTop){ // 组织架构
+                  this.active = 'h';
+                }
+                if(cStp >= document.querySelector("#i").offsetTop){ // 荣誉
+                  this.active = 'i';
+                }
             },
-            onTarget:function(){
-
-
+            setSlidDo:function(e){
+                this.active='a'; this.mNb = e;
             }
         }
     }
@@ -220,7 +144,11 @@
     cursor:pointer;
     color:#333;
 }
-.ls-ul li:hover{
+.ls-ul a{
+    text-decoration: none;
+    color:#333;
+}
+.ls-ul a:hover{
     color:#0F63C7;
 }
 .l-men-com{
@@ -232,12 +160,19 @@
     cursor:pointer;
     color:#333;
 }
+.l-men-com a{
+    text-decoration: none;
+    color:#333;
+}
 .l-men-a{
     color:white;
     background-color:#0F63C7;
 }
 .l-men-b{
     border-top:1px solid #eee;
+}
+.l-men-a a{
+    color:white;
 }
 .itm-vs{
     display: none;
@@ -284,6 +219,7 @@
 .ls-l div:last-of-type{
     border-bottom: 1px solid #eee;
 }
+
 .ss-tit{
     font-weight: bold;
 }
@@ -291,7 +227,7 @@
     font-size: 12px;
     line-height: 21px;
 }
-.mActive{
+.mActive a{
     color:#0F63C7!important;
 }
 .mt-10{

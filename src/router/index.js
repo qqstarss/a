@@ -33,7 +33,12 @@ const routes = [
   {
     path: '/about', // 关于我们
     name: 'about',
-    component: () => import('../views/about.vue')
+    component: () => import('../views/about.vue'),
+    children:[
+      { path: '/about/abouts', component: () => import('../views/abouts.vue')},
+      { path: '/about/contactUs', component: () => import('../views/contactUs.vue')},
+      { path: '/about/advertise', component: () => import('../views/advertise.vue')}
+    ]
   },
   {
     path: '/mobile', // 移动平台
@@ -50,6 +55,7 @@ const routes = [
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
+  scrollBehavior: () => ({ y: 0 }),
   routes 
 })
 

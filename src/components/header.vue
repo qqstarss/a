@@ -9,17 +9,17 @@
             <li :class="[maFlag == 'product' ? 'mactive':'']"><router-link to="/product">产品中心</router-link></li>
             <li :class="[maFlag == 'solution' ? 'mactive':'']"><router-link to="/solution">解决方案</router-link></li>
             <li @mouseover="menuSlideDo(true)" @mouseleave="menuSlideDo(false)" :class="['news-items',maFlag == 'news' ? 'mactive':'']">
-              <div class="news-item"><router-link to="/news">新闻中心</router-link></div>
+              <div class="news-item"><router-link :to="{ path: '/news', query: { name:'newsa'}}">新闻中心</router-link></div>
               <transition name="slide-fade">
                 <ul class="news-ch-w" v-if="newsFlag">
-                  <li><router-link to="/news">新闻中心</router-link></li>
-                  <li><router-link to="/newsCp">公司新闻</router-link></li>
-                  <li><router-link to="/newsRd">行业新闻</router-link></li>
+                  <li @click="setHide"><router-link :to="{ path: '/news', query: { name:'a'}}">新闻中心</router-link></li>
+                  <li @click="setHide"><router-link :to="{ path: '/news', query: { name:'b'}}">公司新闻</router-link></li>
+                  <li @click="setHide"><router-link :to="{ path: '/news', query: { name:'b'}}">行业新闻</router-link></li>
                 </ul>
               </transition>
             </li>
             <li :class="[maFlag == 'business' ? 'mactive':'']"><router-link to="/business">商务合作</router-link></li>
-            <li :class="[maFlag == 'about' ? 'mactive':'']"><router-link to="/about">关于我们</router-link></li>
+            <li :class="[maFlag == 'about' ? 'mactive':'']"><router-link to="/about/abouts">关于我们</router-link></li>
           </ul>
         </div>
       </div>
@@ -90,6 +90,9 @@ export default {
     },
     menuSlideDo:function(b){
       this.newsFlag = b;
+    },
+    setHide:function(){
+      this.newsFlag = false;
     }
   } 
 }
@@ -115,7 +118,6 @@ export default {
   }
   .head{
     width:960px;
-    height: 60px;
     margin:0 auto;
   }
   .head-logo{

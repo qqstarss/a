@@ -8,7 +8,7 @@
           <li><router-link to="/solution">解决方案</router-link></li>
           <li><router-link to="/news">新闻中心</router-link></li>
           <li><router-link to="/business">商务合作</router-link></li>
-          <li><router-link to="/about">关于我们</router-link></li>
+          <li><router-link to="/about/abouts">关于我们</router-link></li>
         </ul>
       </div>
       <div class="food-box">

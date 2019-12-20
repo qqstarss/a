@@ -2,39 +2,14 @@
     <div id="proWrap">
         <commBanner productBanner="product"/>
         <div class="com-cont">
-            <!-- 固定菜单 -->
-            <div class="ls-l-men-w">
-                <div class="l-men-a l-men-com">软件产品</div>
+            <div :class="['ls-l', mFd ? 'lm-fx' :'']">
+                <div class="l-men-b l-men-com">软件产品</div>
                 <ul class="ls-ul">
-                    <li>监管平台</li>
-                    <li>运维平台</li>
-                    <li>监管APP</li>
-                    <li>执法APP</li>
-                    <li>餐饮APP</li>
-                    <li>运维APP</li>
+                    <li :class="active =='a' ? 'mActive' :''"><a href="#a" @click="setNav(true)">监管平台</a></li>
                 </ul>
                 <div class="l-men-b l-men-com">硬件产品</div>
                  <ul class="ls-ul">
-                    <li>硬件产品</li>
-                    <li>硬件产品</li>
-                    <li>硬件产品</li>
-                </ul>
-            </div>
-            <div class="ls-l">
-                <div class="l-men-a l-men-com">软件产品</div>
-                <ul class="ls-ul">
-                    <li>监管平台</li>
-                    <li>运维平台</li>
-                    <li>监管APP</li>
-                    <li>执法APP</li>
-                    <li>餐饮APP</li>
-                    <li>运维APP</li>
-                </ul>
-                <div class="l-men-b l-men-com">硬件产品</div>
-                 <ul class="ls-ul">
-                    <li>硬件产品</li>
-                    <li>硬件产品</li>
-                    <li>硬件产品</li>
+                    <li :class="active == 'b' ? 'mActive' :''"><a href="#b" @click="setNav(false)">油烟净化器</a></li>
                 </ul>
             </div>
             <div class="ls-r" id="rightMain">
@@ -43,48 +18,20 @@
                     软件产品<span>software product</span>
                 </div>
                 <div class="ls-con-a">
-                    <div class="tit"><span class="pro-icon-com picon-a"></span>监管平台</div>
+                    <div class="tit" id="a"><span class="pro-icon-com picon-a"></span>大气污染防治监督信息化平台</div>
                     <div class="ss">
-                        <div class="pro-ls-l"><img src="@/assets/img/pro_img_01.png"></div>
-                        <div class="pro-ls-r">餐饮油烟监督管理信息化平台是专业餐饮油烟治理系统, 采用净化+监测治理模式，通过在线实时监测，解决餐饮企业油烟排放不达标、设备运行异常、清洗台账不健全、执法人员监管难等问题，填补了国内餐饮行业油烟治理的空白。</div>
-                    </div>
-                </div>
-                <div class="ls-con-a">
-                    <div class="tit"><span class="pro-icon-com picon-b"></span>运维平台</div>
-                    <div class="ss">
-                        <div class="pro-ls-l"><img src="@/assets/img/pro_img_01.png"></div>
-                        <div class="pro-ls-r">餐饮油烟监督管理信息化平台是专业餐饮油烟治理系统, 采用净化+监测治理模式，通过在线实时监测，解决餐饮企业油烟排放不达标、设备运行异常、清洗台账不健全、执法人员监管难等问题，填补了国内餐饮行业油烟治理的空白。</div>
-                    </div>
-                </div>
-                <div class="ls-con-a">
-                    <div class="tit"><span class="pro-icon-com picon-c"></span>监管APP</div>
-                    <div class="ss">
-                        <div class="pro-ls-l"><img src="@/assets/img/pro_img_01.png"></div>
-                        <div class="pro-ls-r">餐饮油烟监督管理信息化平台是专业餐饮油烟治理系统, 采用净化+监测治理模式，通过在线实时监测，解决餐饮企业油烟排放不达标、设备运行异常、清洗台账不健全、执法人员监管难等问题，填补了国内餐饮行业油烟治理的空白。</div>
+                        <div class="pro-ls-l"><img src="@/assets/img/so_02.png"></div>
+                        <div class="pro-ls-r">大气污染监督信息化管理平台采用了“物联网+技术服务”创新环保模式，针对之前所说的治理难点，给予监管实施信息化全覆盖，通过平台实施市级、区县级、乡镇级精细架构管控，做到可视化全区域油烟排放监管。</div>
                     </div>
                 </div>
                 <div class="proh2 mt-20">
                     硬件产品<span>Hardware products</span>
                 </div>
                 <div class="ls-con-a">
-                    <div class="tit"><span class="pro-icon-com picon-a"></span>监管平台</div>
+                    <div class="tit" id="b"><span class="pro-icon-com picon-b"></span>油烟净化设备</div>
                     <div class="ss">
-                        <div class="pro-ls-l"><img src="@/assets/img/pro_img_01.png"></div>
-                        <div class="pro-ls-r">餐饮油烟监督管理信息化平台是专业餐饮油烟治理系统, 采用净化+监测治理模式，通过在线实时监测，解决餐饮企业油烟排放不达标、设备运行异常、清洗台账不健全、执法人员监管难等问题，填补了国内餐饮行业油烟治理的空白。</div>
-                    </div>
-                </div>
-                <div class="ls-con-a">
-                    <div class="tit"><span class="pro-icon-com picon-b"></span>运维平台</div>
-                    <div class="ss">
-                        <div class="pro-ls-l"><img src="@/assets/img/pro_img_01.png"></div>
-                        <div class="pro-ls-r">餐饮油烟监督管理信息化平台是专业餐饮油烟治理系统, 采用净化+监测治理模式，通过在线实时监测，解决餐饮企业油烟排放不达标、设备运行异常、清洗台账不健全、执法人员监管难等问题，填补了国内餐饮行业油烟治理的空白。</div>
-                    </div>
-                </div>
-                <div class="ls-con-a">
-                    <div class="tit"><span class="pro-icon-com picon-c"></span>监管APP</div>
-                    <div class="ss">
-                        <div class="pro-ls-l"><img src="@/assets/img/pro_img_01.png"></div>
-                        <div class="pro-ls-r">餐饮油烟监督管理信息化平台是专业餐饮油烟治理系统, 采用净化+监测治理模式，通过在线实时监测，解决餐饮企业油烟排放不达标、设备运行异常、清洗台账不健全、执法人员监管难等问题，填补了国内餐饮行业油烟治理的空白。</div>
+                        <div class="pro-ls-l"><img src="@/assets/img/hd_01.png"></div>
+                        <div class="pro-ls-r">油烟净化设备由采集罩收集餐饮企业厨房的油烟，经过风机作用抽取，使其能够顺利地进入排烟管道，然后经过油烟净化设备净化处理，油烟被净化达标后再被风机抽取到室外进行排放。配套油烟在线监测系统对餐饮企业的油烟排放进行实时监控。</div>
                     </div>
                 </div>
             </div>
@@ -96,6 +43,7 @@
     import commBanner from '@/components/banner.vue'
     import commFooder from '@/components/footer.vue'
     import commNav from '@/components/nav_bread.vue'
+    import smScroll from 'smooth-scroll';
     export default {
         name: 'product',
         components: {
@@ -105,7 +53,10 @@
         },
         data(){
             return {
-                act:"#a",
+                active:'a',
+                mFd:false,
+                mNb:0,
+                scroll:null,
                 nav:{
                     a:"产品中心",
                     b:"软件产品"
@@ -114,12 +65,37 @@
         },
         mounted(){
             this.$nextTick(function(){
-                document.querySelector("#proWrap").addEventListener('scroll', this.onScroll);
+                window.addEventListener('scroll', this.onScroll);
+                this.onScroll(); 
+                this.scroll = new smScroll('a[href*="#"]',{
+                    speed:800,
+                    speedAsDuration: true
+                });
+                let getSele = window.location.hash;
+                if(getSele){
+                   let anchor = document.querySelector(getSele).offsetTop + 400;
+                   this.scroll.animateScroll(anchor);
+                }
+
             })
         },
         methods:{
             onScroll:function(){
-
+                let sTp = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+                // 定位左侧菜单
+                if(sTp > 400){this.mFd = true;}else if(sTp < 400){this.mFd = false;}
+            },
+            setSlidDo:function(e){
+                this.active='a'; this.mNb = e;
+            },
+            setNav:function(b){
+               if(b){
+                   this.nav.b="软件产品";
+                   this.active = "a"
+               } else {
+                   this.nav.b="硬件产品"
+                   this.active = "b"
+               }
             }
         }
     }
@@ -146,6 +122,13 @@
 .mt-20{
     margin-top:20px;
 }
+.ls-ul a{
+    color:#333;
+    text-decoration: none;
+}
+.ls-ul a:hover{
+    color:#0F63C7;
+}
 .proh2 span{
     margin-left: 10px;
 }
@@ -165,15 +148,17 @@
 .picon-c{
     background:url("../assets/img/pro_icon_03.png") no-repeat;
 }
+.mActive a{
+    color:#0F63C7!important;
+}
 .ls-l{
     float: left;
-    /* visibility: hidden;  */   
     width:100px;
 }
 .ls-r{
     margin-left:30px;
     width:830px;
-    float: left;
+    float: right;
 }
 .ls-ul{
     overflow: hidden;
@@ -203,6 +188,7 @@
     background-color:#0F63C7;
 }
 .l-men-b{
+    border-bottom: 1px solid #eee;
     border-top:1px solid #eee;
 }
 .itm-vs{
@@ -272,9 +258,9 @@
     display: none;
     top:50px;
 }
-.ls-l-men-w div:last-of-type{
+/* .ls-l-men-w div:last-of-type{
     border-bottom: 1px solid #eee;
-}
+} */
 .ls-l div:last-of-type{
     border-bottom: 1px solid #eee;
 }
